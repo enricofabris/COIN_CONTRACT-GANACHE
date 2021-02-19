@@ -5,7 +5,7 @@
 ![](coin_contract1.JPG)
 
 
-### Insert the amount you want to bet (IN WEI), bet on HEAD or TAIL, CONFIRM your bet ###
+### Insert the amount you want to bet (IN ETH), bet on HEAD or TAIL, CONFIRM your bet, the result is given with a pseudo random function ###
 
 - On the top of the page you can see the total statistics of all the bet set on the contract
 - On the top of the page you can also see the total balance of the contract, the maximum bet and the minimum bet
