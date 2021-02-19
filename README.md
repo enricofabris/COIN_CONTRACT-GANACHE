@@ -2,7 +2,7 @@
 
 > bet head or tail in a decentralized solidity contract
 
-![](coin_contract1.JPG)
+![](page.JPG)
 
 
 ### Insert the amount you want to bet (IN ETH), bet on HEAD or TAIL, CONFIRM your bet, the result is given with a pseudo random function ###
@@ -20,7 +20,7 @@
  
  
 ### If you are the owner of the contract you will see in the dapp some managment buttons ###
- ![](page.JPG)
+
  
  - You can deposit more funds in the contract
  - You can withdraw funds from the contract
