@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>People</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <script type="text/javascript" src="./abi.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+
+
+
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-6">Welcome to Coinchain</h1>
+        <p class="lead">Make your bet safely through blockchain </p>
+      </div>
+      <br>
+      <div class="container">
+      <div class = "row">
+
+        <div class = "col">
+          <div>
+            Total unique players: <span id="TotUniquePlayers"></span>
+          </div>
+        </div>
+
+          <div class = "col">
+            <div>
+              Total games: <span id="TotGames"></span>
+            </div>
+          </div>
+
+          <div class = "col">
+            <div>
+              Total money betted: <span id="TotMoneyBetted"></span>
+            </div>
+          </div>
+
+          <div class = "col">
+            <div>
+              Total wins: <span id="TotGamesWon"></span>
+            </div>
+          </div>
+
+          <div class = "col">
+            <div>
+              Total money won: <span id="TotMoneyWon"></span>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container">
+
+      <div class="container">
+      <div class = "row">
+
+          <div class = "col">
+            <div>
+              Contract balance: <span id="balance_output"></span>
+            </div>
+          </div>
+
+          <div class = "col">
+            <div>
+              Maximum Bet: <span id="max_bet"></span>
+            </div>
+          </div>
+
+          <div class = "col">
+            <div>
+              Minimum Bet: <span id="min_bet"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+        <br>
+        <br>
+
+        <div class = "row">
+          <div class = "col">
+
+          <div class="container">
+
+          <div class="form-group row">
+          <div class="col-xs-2">
+          <h2>SET YOUR STAKE</h2>
+          <input type="text" class="form-control" id="amount" placeholder="Set your stake">
+          <br>
+          <h2>SET YOUR BET</h2>
+          <input type="button" class="btn btn-primary btn-block" value="HEAD" id="bet0" placeholder="0" >
+          <input type="button" class="btn btn-primary btn-block" value="TAIL" id="bet1" placeholder="1" >
+          <button type="button" id="confirm" class="btn btn-danger btn-block">CONFIRM BET</button>
+        </div>
+
+
+        </div>
+        </div>
+        </div>
+
+        <div class = "col">
+
+        <h2>STATISTICS</h2>
+
+        <div id="hidePlayer" style="display:none;">
+        <h4>LAST BET</h4>
+        <div>
+          Amount: <span id="amount_output"></span>
+        </div>
+        <div>
+          What did you bet: <span id="bet_output"></span>
+        </div>
+        <div>
+          YOU: <span id="message_output"></span>
+        </div>
+        <div>
+          coin flip was: <span id="result_output"></span>
+        </div>
+
+        <h4>ALL GAMES</h4>
+        <div>
+          Games played: <span id="yourGames"></span>
+        </div>
+        <div>
+          Money betted: <span id="yourMoneyBetted"></span>
+        </div>
+        <div>
+          Games won: <span id="yourGamesWon"></span>
+        </div>
+        <div>
+          Money won: <span id="YourMoneyWon"></span>
+        </div>
+
+      </div>
+        <br>
+
+        <button type="button" id="get_data_button" class="btn btn-primary  btn-block" >Get Data</button>
+      </div>
+
+
+      <div class = "col">
+      <h2>YOUR BALANCE</h2>
+      <div>
+      <br>
+      Player balance: <span id="playerBalance_output"></span>
+      </div>
+      <br>
+      <h2>WITHDRAW</h2>
+      <input type="text" class="form-control" id="withdrawPlayerAmount" placeholder="amount to withdraw Player" >
+      <br>
+      <button type="button" id="withdrawPlayer" class="btn btn-primary  btn-block">WITHDRAW PLAYER</button>
+      </div>
+      </div>
+
+
+      <br>
+        <br>
+          <br>
+            <br>
+
+
+<div id="hide" style="display:none;">
+
+        <div class="container">
+        <div class="form-group row">
+        <div class="col-xs-2">
+
+
+
+          <div class="container">
+          <div class = "row">
+
+            <div class = "col">
+
+<h2>CONTRACT MANAGER</h2>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="minBetAmount" placeholder="Set minimum bet" >
+    <button type="button" id="set_minimumBet" class="btn btn-primary">SET MINIMUM BET</button>
+  </div>
+
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="depositAmount" placeholder="amount to deposit" >
+    <button type="button" id="deposit" class="btn btn-primary">DEPOSIT FUNDS</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="withdrawAmount" placeholder="amount to withdraw" >
+    <button type="button" id="withdraw" class="btn btn-primary">WITHDRAW</button>
+  </div>
+  </div>
+  <br>
+
+
+
+
+
+  <div class = "col">
+
+        <h2>PLAYER STATISTICS</h2>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="address" placeholder="Input player number" >
+          <button type="button" id="getAddress" class="btn btn-primary">GET ADDRESS</button>
+
+        </div>
+        <div>
+          Number of unique players: <span id="TotUniquePlayers1"></span>
+          <br>
+          Address: <span id="addressResult"></span>
+        </div>
+        <div>
+          Games: <span id="playerGames"></span>
+        </div>
+        <div>
+          Money betted: <span id="playerMoneyBetted"></span>
+        </div>
+        <div>
+          Games won: <span id="playerGamesWon"></span>
+        </div>
+        <div>
+          Money Won: <span id="PlayerMoneyWon"></span>
+        </div>
+
+      <br>
+  </div>
+
+</div>
+
+
+
+  </body>
+</html>
